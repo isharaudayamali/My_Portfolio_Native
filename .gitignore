@@ -25,12 +25,6 @@ Thumbs.db
 *.class
 *.txt
 
-# Ignore image files (if not needed in repo)
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.svg
 
 # Ignore PDF files (if CV.pdf should not be versioned)
 CV.pdf
