@@ -401,6 +401,29 @@ footer {
   }
 }
 
+.btn-download-cv {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: 700;
+  padding: 0.7em 1.6em;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #ff2c4122;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-download-cv:hover,
+.btn-download-cv:focus {
+  background-color: #ff9317;
+  box-shadow: 0 0 18px 3px #ff9317cc;
+  transform: scale(1.05);
+  outline: none;
+}
+
 
 .header-container,
 .container > section,

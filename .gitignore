@@ -25,6 +25,29 @@ Thumbs.db
 *.class
 *.txt
 
+# Ignore image files (if not needed in repo)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+
+# Ignore PDF files (if CV.pdf should not be versioned)
+CV.pdf
+
+# Ignore backup and temporary files
+*.bak
+*.old
+~$*
+
+# Ignore Mac system files
+.Spotlight-V100
+.Trashes
+
+# Ignore Windows system files
+ehthumbs.db
+Desktop.ini
+
 # Ignore other common files
 *.tmp
 *.swp
