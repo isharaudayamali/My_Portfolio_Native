@@ -1,3 +1,5 @@
+/* Download CV Button Style (matches btn-show-projects) */
+
 :root {
   --background-color: #111014;
   --text-color: #fff8f5;
@@ -172,8 +174,9 @@ h3, h4 {
 }
 .skill-badge:hover {
   box-shadow: 0 0 24px 4px #ff2c41b5;
-  transform: translateY(-7px) scale(1.04) rotate(-1deg);
+  /* transform: translateY(-7px) scale(1.04) rotate(-1deg); */
   border-color: #ff9317;
+  transform: scale(1.04) translateY(-5px);
 }
 
 .skill-icon {
@@ -184,9 +187,10 @@ h3, h4 {
   filter: drop-shadow(0 0 6px #ff2c41aa);
   transition: color 0.3s, filter 0.3s;
 }
-.skill-badge:hover .skill-icon {
+.skill-badge:hover .skill-icon  {
   color: #ff2c41;
   filter: drop-shadow(0 0 12px #ff9317cc);
+  transform: scale(1.04) translateY(-5px);
 }
 
 .skill-badge strong {
@@ -208,12 +212,14 @@ h3, h4 {
   font-weight: 500;
   box-shadow: 0 1px 4px #ff2c4120;
   transition: background 0.28s, color 0.28s;
+  
 }
 .skill-badge span:not(.skill-icon):not(strong):hover {
   background: #ff2c41;
   color: #fff8f5;
   cursor: pointer;
   box-shadow: 0 0 9px #ff2c41cc;
+  transform: scale(1.04) translateY(-5px);
 }
 
 /* Responsive: stack badges on small screens */
@@ -255,7 +261,7 @@ h3, h4 {
   background: linear-gradient(107deg, #1e1119 45%, #460a19 100%);
 }
 
-.project-card a {
+.project-card a  {
   text-decoration: none;
   color: var(--link-color);
   font-weight: 600;
@@ -401,23 +407,9 @@ footer {
   }
 }
 
-.btn-download-cv {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  font-weight: 700;
-  padding: 0.7em 1.6em;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: 0 2px 12px #ff2c4122;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  user-select: none;
-  cursor: pointer;
-  text-align: center;
-}
 
-.btn-download-cv:hover,
-.btn-download-cv:focus {
+.btn-show-projects:hover,
+.btn-show-projects:focus{
   background-color: #ff9317;
   box-shadow: 0 0 18px 3px #ff9317cc;
   transform: scale(1.05);
@@ -427,7 +419,7 @@ footer {
 .btn-show-projects {
   display: inline-block;
   background-color: #181014;
-  color: #ff2c41;
+  color: #ff2c41aa;
   font-weight: 700;
   padding: 0.7em 1.6em;
   border-radius: 10px;
@@ -455,4 +447,308 @@ footer {
 .project-card,
 .skills-row > div {
   animation: fadeInUp 0.9s cubic-bezier(.4,1.45,.4,1.1)
+}
+
+
+/* Enhanced Combined Progress Bar with Creative Hover Effects */
+#combined-progress-container {
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  padding: 1.2rem;
+  background: linear-gradient(116deg, #2a090f 60%, #181014 100%);
+  border-radius: 15px;
+  border: 2px solid #161317;
+  box-shadow: 0 3px 14px rgba(255, 44, 65, 0.25);
+  transition: 
+    border-color 0.23s,
+    background 0.3s,
+    box-shadow 0.32s,
+    transform 0.25s;
+}
+
+h2 {
+  color: var(--primary-color);
+  border-left: 5px solid #ff9317;
+  padding-left: 0.5em;
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
+  position: relative;
+  overflow: hidden;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, var(--primary-color), #ff9317);
+  border-radius: 2px;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+h2:hover::after {
+  width: 70%;
+}
+
+#combined-progress-container:hover {
+  border-color: #ff9317;
+  background: linear-gradient(110deg, #1b0105 60%, #38040e 100%);
+  box-shadow: 0 3px 22px 2px rgba(255, 147, 23, 0.8);
+  transform: translateY(-3px);
+}
+
+.combined-progress-bar {
+  height: 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2a090f 0%, #460a19 100%);
+  overflow: hidden;
+  display: flex;
+  box-shadow: 
+    0 2px 8px rgba(255, 44, 65, 0.2),
+    inset 0 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 44, 65, 0.4);
+  position: relative;
+  transition: 
+    box-shadow 0.35s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease;
+}
+
+#combined-progress-container:hover .combined-progress-bar {
+  box-shadow: 
+    0 0 16px 2px rgba(255, 147, 23, 0.6),
+    inset 0 1px 3px rgba(0,0,0,0.3);
+  border-color: rgba(255, 147, 23, 0.8);
+  transform: scale(1.02);
+}
+
+/* Animated background glow effect */
+.combined-progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 147, 23, 0.3) 50%, 
+    transparent 100%);
+  transition: left 0.6s ease;
+}
+
+#combined-progress-container:hover .combined-progress-bar::before {
+  left: 100%;
+}
+
+.combined-progress-segment {
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  color: #fff8f5;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.85em;
+  line-height: 28px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+/* Individual segment hover effects */
+.combined-progress-segment:hover {
+  filter: brightness(1.3) saturate(1.2);
+  transform: scaleY(1.1);
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(255, 147, 23, 0.6);
+}
+
+/* Pulse animation on hover */
+#combined-progress-container:hover .combined-progress-segment {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}
+
+/* Enhanced color mapping with gradients */
+.lang-color-TypeScript { 
+  background: linear-gradient(135deg, #ff4d4d 0%, #ff1a1a 100%);
+  color: #fff8f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.lang-color-HTML { 
+  background: linear-gradient(135deg, #fb253a 0%, #d41e31 100%);
+  color: #fff8f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.lang-color-Java { 
+  background: linear-gradient(135deg, #ff1000 0%, #cc0d00 100%);
+  color: #fff8f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.lang-color-CSS { 
+  background: linear-gradient(135deg, #ff7c7c 0%, #ff5555 100%);
+  color: #fff8f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.lang-color-JavaScript { 
+  background: linear-gradient(135deg, #ff8585 0%, #ff6b6b 100%);
+  color: #fff8f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.lang-color-Other { 
+  background: linear-gradient(135deg, #fedbdb 0%, #fcc8c8 100%);
+  color: #2a090f;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+}
+
+#languages-legend {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-top: 8px;
+  align-items: center;
+}
+
+#languages-legend span {
+  transition: all 0.3s ease;
+}
+
+/* Tooltip effect for segments */
+.progress-segment[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 16, 20, 0.95);
+    color: #ff9317;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border: 1px solid #ff2c41;
+    box-shadow: 0 4px 12px rgba(255, 44, 65, 0.3);
+    z-index: 10;
+}
+
+.combined-progress-segment:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Loading animation for when the component first appears */
+.combined-progress-container {
+  animation: slideInUp 0.8s cubic-bezier(0.4, 1.45, 0.4, 1.1) 0.2s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .combined-progress-bar {
+    height: 32px;
+  }
+  
+  .combined-progress-segment {
+    line-height: 32px;
+    font-size: 0.8em;
+  }
+  
+  .languages-legend {
+    gap: 8px;
+  }
+  
+  .languages-legend span {
+    padding: 4px 8px;
+    font-size: 0.85em;
+  }
+}
+
+/* Color mapping based on common languages (adjust as needed) */
+.lang-color-TypeScript { background-color: #ff4d4d; color: #050505}
+.lang-color-HTML { background-color: #fb253a; color: #1b1a1a}
+.lang-color-Java { background-color:  #ff1000; color: #fedbdb}
+.lang-color-CSS { background-color: #ff7c7c; }
+.lang-color-JavaScript { background-color: #ff8585; color: #333; }
+.lang-color-Other { background-color: #fedbdb; color: #111111;}
+
+/* Legend style */
+.languages-legend {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.languages-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.languages-legend .color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+#btn-download-cv {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin: 10px 0;
+    box-shadow: 0 2px 6px rgba(25, 118, 210, 0.08);
+}
+#btn-download-cv:hover, .btn-download-cv:focus {
+    background-color: #1256a3;
+    color: #fff;
+    text-decoration: none;
 }
